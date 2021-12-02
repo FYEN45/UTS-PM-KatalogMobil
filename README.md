@@ -1,5 +1,3 @@
 # KatalogKelompok
 
-kelpin ajg
-
-Kelpin tai
+kelpin kukuku kuntullll
