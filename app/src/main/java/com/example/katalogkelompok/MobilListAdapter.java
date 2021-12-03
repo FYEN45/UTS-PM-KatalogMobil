@@ -25,8 +25,8 @@ public class MobilListAdapter extends RecyclerView.Adapter<MobilListAdapter.Mobi
         notifyItemInserted(mobilList.size() - 1);
     }
 
-    public void addAll(List<Mobil> singleList){
-        for(Mobil mobil : singleList){
+    public void addAll(List<Mobil> mobilList){
+        for(Mobil mobil : mobilList){
             add(mobil);
         }
     }
