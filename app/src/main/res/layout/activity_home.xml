@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background_color"
+    android:orientation="vertical"
     tools:context=".HomeActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -12,14 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:background="@color/toolbar_background_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/ic_baseline_car_54"
         app:subtitle="Katalog Mobil"
         app:subtitleTextColor="@color/toolbar_subtitle_text_color"
         app:title="Home"
-        app:titleTextColor="@color/toolbar_title_text_color"/>
+        app:titleTextColor="@color/toolbar_title_text_color" />
 
     <Button
         android:id="@+id/buttonLogout"
@@ -27,23 +25,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="28dp"
-        android:text="Logout"
-        app:layout_constraintStart_toEndOf="@+id/buttonWebsite"
-        app:layout_constraintTop_toBottomOf="@+id/Toolbar" />
+        android:text="Logout" />
 
     <Button
         android:id="@+id/buttonWebsite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="28dp"
-        android:text="Website"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Toolbar" />
+        android:text="Website" />
 
     <FrameLayout
         android:id="@android:id/content"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="505dp"
@@ -52,7 +45,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogout">
+=======
+        android:layout_height="wrap_content">
+
+>>>>>>> a0dbf66d40829c25f3dd7c1949057783d1ff2028
     </FrameLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
