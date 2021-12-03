@@ -1,9 +1,21 @@
 # KatalogKelompok
+# Katalog Mobil by Kelompok 2:
+- Felix Setiawan    32190032
+- Kelvin Chandra    32190041
+- Reynaldo Krisno   32190097
+- Ferry Gunawan     32190098
 
-Ini aplikasi buat tugas klompok.
+# What to do?
+- Gridlist / Gridview gambar mobil.
+- Halaman Deskripsi mobil
+- Halaman user list (khusus admin doang)
+  
+- Bikin database user
+- Bikin webservices php
+- Koneksi Login, Register ke database user
 
-Isi klompoknya ada
-- pergun
-- pelix
-- kelpin
-- aldo
+
+# Optional :
+- Koneksi Katalog mobil ke database mobil
+- Bikin database buat nyimpen smua data mobil
+- Custom UI button
