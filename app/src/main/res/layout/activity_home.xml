@@ -21,4 +21,34 @@
         app:title="Home"
         app:titleTextColor="@color/toolbar_title_text_color"/>
 
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:text="Logout"
+        app:layout_constraintStart_toEndOf="@+id/buttonWebsite"
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar" />
+
+    <Button
+        android:id="@+id/buttonWebsite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="28dp"
+        android:text="Website"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar" />
+
+    <FrameLayout
+        android:id="@+id/FrameLayout"
+        android:layout_width="409dp"
+        android:layout_height="503dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="155dp">
+
+    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
