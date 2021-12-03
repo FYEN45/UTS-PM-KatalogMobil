@@ -1,42 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-=======
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> a0dbf66d40829c25f3dd7c1949057783d1ff2028
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:ignore="UseCompoundDrawables">
-<<<<<<< HEAD
-=======
-
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#00BCD4"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        tools:ignore="ContentDescription"/>
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="186dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="#EAEAEA"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp" />
->>>>>>> a0dbf66d40829c25f3dd7c1949057783d1ff2028
 
     <ImageView
         android:id="@+id/img"
