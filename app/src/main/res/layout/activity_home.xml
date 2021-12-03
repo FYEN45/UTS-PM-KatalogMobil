@@ -4,12 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background_color"
     tools:context=".HomeActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="62dp"
+        android:background="@color/toolbar_background_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/ic_baseline_car_54"
+        app:subtitle="Katalog Mobil"
+        app:subtitleTextColor="@color/toolbar_subtitle_text_color"
+        app:title="Home"
+        app:titleTextColor="@color/toolbar_title_text_color"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
