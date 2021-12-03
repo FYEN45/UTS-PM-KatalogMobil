@@ -4,8 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
+    android:background="@color/app_background_color"
     tools:context=".RegisterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@color/toolbar_background_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/ic_baseline_car_54"
+        app:subtitle="Katalog Mobil"
+        app:subtitleTextColor="@color/toolbar_subtitle_text_color"
+        app:title="User Register"
+        app:titleTextColor="@color/toolbar_title_text_color"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,12 +39,16 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/usericon" />
+                app:srcCompat="@drawable/ic_baseline_person_24" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterName"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusTopStart="50dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterName"
@@ -44,7 +62,11 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterEmail"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusTopStart="50dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterEmail"
@@ -58,7 +80,11 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterPhone"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusTopStart="50dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterPhone"
@@ -72,7 +98,11 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterUsername"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusTopStart="50dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterUsername"
@@ -87,6 +117,10 @@
                 android:id="@+id/textInputLayoutRegisterPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:boxCornerRadiusBottomEnd="50dp"
+                app:boxCornerRadiusBottomStart="50dp"
+                app:boxCornerRadiusTopEnd="50dp"
+                app:boxCornerRadiusTopStart="50dp"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -95,8 +129,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:inputType="textPassword"
-                    android:hint="Password" />
+                    android:hint="Password"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -112,6 +146,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:text="TextView"
                 android:textAlignment="center" />
 
