@@ -14,15 +14,17 @@
         'error_text' => ""
     );
 
-    $query = mysqli_query($db->connect_DB(), "SELECT * FROM user WHERE username='$username' AND password='".$password."'");
+    $query = mysqli_query($db->connect_DB(), "SELECT * FROM user WHERE username='$username' AND password='$password'");
     if(mysqli_num_rows($query) > 0){
-        header("HTTP/1.1.200");
+        header('HTTP/1.1.200');
         $response['error'] = FALSE;
         $response['error_text'] = "Login Berhasil";
     } else {
+        header('HTTP/1.1.500');
         $response['error'] = TRUE;
         $response['error_text'] = "Login Gagal";
     }
+    $db->close_DB();
 
     echo json_encode($response);
 ?>

@@ -21,7 +21,6 @@
                 printf("Koneksi Gagal! \n", mysqli_connect_error());
                 exit();
             }
-            printf("helo");
             return $this->con;
         }
 
