@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.example.katalogkelompok.Config.Config;
@@ -53,49 +54,31 @@ public class LoginActivity extends AppCompatActivity {
         //Button Login
         buttonLogin.setOnClickListener(view -> {
             showProgressDialog();
-
-            //todo : APP BAJINGAN LOGIN KGA JALAN
-            StringRequest strReq = new StringRequest(Request.Method.POST, Config.userLoginVerification, responses -> {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userLoginVerification, responses ->{
                 hideProgressDialog();
-                try {
-                    JSONObject response = new JSONObject(responses);
-                    Toast.makeText(LoginActivity.this, response.getString("error_text") , Toast.LENGTH_LONG).show();
-                    JSONObject header = response.getJSONObject("response");
-                    Iterator<String> iterator = header.keys();
-                    while(iterator.hasNext()){
-                        String key = iterator.next();
-                        JSONObject item = (JSONObject) header.get(key);
-
-                        Boolean phpResponse = item.getBoolean("error");
-                        String phpResponseText = item.getString("error_text");
-
-                        Log.d("Program tai", phpResponse.toString());
-                        tempBool = phpResponse;
-                    }
-                } catch (JSONException e){
-                    e.printStackTrace();
-                }
-
-                if(tempBool) {
-                    Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                if (responses.equals("Login Berhasil!")) {
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    Toast.makeText(LoginActivity.this, responses, Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                     finish();
+                } else {
+                    Toast.makeText(LoginActivity.this, responses, Toast.LENGTH_SHORT).show();
                 }
-
             }, error -> {
                 VolleyLog.d(TAG, "Error: "+error.getMessage());
                 hideProgressDialog();
             })
             {
+                //Data yang dikirim
                 @Override
-                protected Map<String, String> getParams() {
+                protected Map<String, String> getParams(){
                     Map<String, String> params = new HashMap<>();
                     params.put("username", String.valueOf(editTextLoginUsername.getText()));
                     params.put("password", String.valueOf(editTextLoginPassword.getText()));
                     return params;
                 }
             };
-            AppController.getInstance(getApplicationContext()).addToRequestQueue(strReq);
+            AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
         });
 
         //Textview Intent ke Register
