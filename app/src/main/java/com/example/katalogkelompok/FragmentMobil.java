@@ -60,6 +60,9 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
                 "New Vios", "All New Corolla Altis", "All New Camry", "All New Corolla Altis Hybrid",
                 "All New Camry Hybrid", "New Toyota 86", "Toyota GR Supra", "All New Avanza"
         };
+        String[] deskripsi = {
+
+        };
         for(int i = 0; i < img.length; i++){
             mobil = new Mobil();
             mobil.setImg(img[i]);
