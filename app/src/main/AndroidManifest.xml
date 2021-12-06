@@ -18,9 +18,6 @@
             android:name=".UserListActivity"
             android:exported="false" />
         <activity
-            android:name=".UserList.UserListAcivity"
-            android:exported="false" />
-        <activity
             android:name=".DescriptionActivity"
             android:exported="false" />
         <activity
