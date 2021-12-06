@@ -111,6 +111,7 @@ public class HomeActivity extends AppCompatActivity {
             "- New 4\"2 TFT MID\n" +
             "- New Dynamic Head Unit 9\" Display"
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,8 +119,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Button buttonLogout = findViewById(R.id.buttonLogout);
         Button buttonWebsite = findViewById(R.id.buttonWebsite);
-
-
+        Button buttonUserList = findViewById(R.id.buttonUserList);
 
         buttonLogout.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
@@ -131,6 +131,11 @@ public class HomeActivity extends AppCompatActivity {
             String url = "https://www.toyota.astra.co.id/home";
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
+            startActivity(intent);
+        });
+
+        buttonUserList.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, UserListActivity.class);
             startActivity(intent);
         });
 
