@@ -18,6 +18,7 @@ public class GridMarginDecoration extends RecyclerView.ItemDecoration{
         this.top = top;
         this.bottom = bottom;
     }
+
     @Override
     public void getItemOffsets(Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state){
         outRect.set(left, right, top, bottom);
