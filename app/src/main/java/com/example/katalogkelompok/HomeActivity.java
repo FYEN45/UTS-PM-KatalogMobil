@@ -8,6 +8,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class HomeActivity extends AppCompatActivity {
 
     int[] gridimg = {
@@ -118,7 +120,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Button buttonLogout = findViewById(R.id.buttonLogout);
-        Button buttonWebsite = findViewById(R.id.buttonWebsite);
         Button buttonUserList = findViewById(R.id.buttonUserList);
 
         buttonLogout.setOnClickListener(view -> {
@@ -127,7 +128,8 @@ public class HomeActivity extends AppCompatActivity {
             finish();
         });
 
-        buttonWebsite.setOnClickListener(view -> {
+        FloatingActionButton floatingActionButtonWebsite = findViewById(R.id.floatingActionButtonWebsite);
+        floatingActionButtonWebsite.setOnClickListener(view -> {
             String url = "https://www.toyota.astra.co.id/home";
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));

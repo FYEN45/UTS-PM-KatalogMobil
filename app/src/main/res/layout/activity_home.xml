@@ -22,6 +22,22 @@
         app:title="Home"
         app:titleTextColor="@color/toolbar_title_text_color" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonWebsite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="342dp"
+        android:layout_marginTop="471dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="11dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogout"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
@@ -51,36 +67,22 @@
         android:id="@+id/buttonUserList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="550dp"
         android:text="User List"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonLogout"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonWebsite"
-        app:layout_constraintTop_toBottomOf="@+id/Toolbar"
-        app:layout_constraintVertical_bias="0.02" />
-
-    <Button
-        android:id="@+id/buttonWebsite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Website"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonUserList"
-        app:layout_constraintEnd_toStartOf="@+id/buttonUserList"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonUserList"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar" />
 
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="52dp"
         android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonUserList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonUserList"
-        app:layout_constraintTop_toTopOf="@+id/buttonUserList"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
