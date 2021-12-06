@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
                     "- New Comfortable Suspension\n" +
                     "- 6 Airbags D/P/S/C\n" +
                     "- Hill Start Assist\n" +
-                    "- 7P Seatbelt Warning\n"
+                    "- 7P Seatbelt Warning"
     };
     String[] griddeskripsi1 = {
             "G Type\n" +
