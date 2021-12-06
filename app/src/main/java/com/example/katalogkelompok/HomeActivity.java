@@ -30,16 +30,6 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        FloatingActionButton floatingActionButtonWebsite = findViewById(R.id.floatingActionButtonWebsite);
-        floatingActionButtonWebsite.bringToFront();
-        floatingActionButtonWebsite.invalidate();
-        floatingActionButtonWebsite.setOnClickListener(view -> {
-            String url = "https://www.toyota.astra.co.id/home";
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
-            startActivity(intent);
-        });
-
         Fragment fragment = getSupportFragmentManager().findFragmentById(android.R.id.content);
         if (fragment == null) {
             fragment = FragmentMobil.newInstance();
