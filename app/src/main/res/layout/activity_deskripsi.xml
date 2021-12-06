@@ -7,13 +7,27 @@
     android:background="@color/app_background_color"
     tools:context=".DescriptionActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@color/toolbar_background_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/ic_baseline_car_54"
+        app:subtitle="Katalog Mobil"
+        app:subtitleTextColor="@color/toolbar_subtitle_text_color"
+        app:title="Deskripsi Mobil"
+        app:titleTextColor="@color/toolbar_title_text_color" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,10 +37,12 @@
 
             <ImageView
                 android:id="@+id/gambar"
-                android:layout_width="250dp"
-                android:layout_height="150dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
                 android:adjustViewBounds="true"
                 tools:ignore="ContentDescription" />
@@ -44,6 +60,18 @@
                 tools:text="Nama" />
 
             <TextView
+                android:id="@+id/harga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Harga"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold|italic"
+                tools:text="Harga" />
+
+            <TextView
                 android:id="@+id/deskripsi1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,25 +80,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:background="#FFFFFF"
-                android:padding="15dp"
                 android:justificationMode="inter_word"
-                android:text="Deskripsi"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/deskripsi2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
                 android:padding="15dp"
-                android:background="#FFFFFF"
-                android:justificationMode="inter_word"
                 android:text="Deskripsi"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="normal" />

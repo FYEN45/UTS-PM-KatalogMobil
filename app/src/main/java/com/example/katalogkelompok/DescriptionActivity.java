@@ -18,17 +18,13 @@ public class DescriptionActivity extends AppCompatActivity {
 
         ImageView gambarMobil = findViewById(R.id.gambar);
         TextView titleMobil = findViewById(R.id.nama);
+        TextView hargaMobil = findViewById(R.id.harga);
         TextView deskripsiMobil1 = findViewById(R.id.deskripsi1);
-        TextView deskripsiMobil2 = findViewById(R.id.deskripsi2);
 
         Intent i = getIntent();
         gambarMobil.setImageResource(i.getIntExtra("img",0));
         titleMobil.setText(i.getStringExtra("title"));
+        hargaMobil.setText(i.getStringExtra("harga"));
         deskripsiMobil1.setText(i.getStringExtra("deskripsi1"));
-        if(!i.getStringExtra("deskripsi2").equals("")){
-            deskripsiMobil2.setText(i.getStringExtra("deskripsi2"));
-        }else{
-            deskripsiMobil2.setVisibility(View.INVISIBLE);
-        }
     }
 }

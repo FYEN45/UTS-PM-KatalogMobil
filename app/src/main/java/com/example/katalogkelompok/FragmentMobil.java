@@ -21,7 +21,7 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
     private RecyclerView lvSingle;
     private MobilListAdapter mobilListAdapter;
     private Context context;
-    HomeActivity home = new HomeActivity();
+    DataListMobil dataListMobil = new DataListMobil();
 
     public static Fragment newInstance() { return new FragmentMobil();}
 
@@ -54,14 +54,8 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
     public void loadData(){
         List<Mobil> mobilList = new ArrayList<>();
         Mobil mobil;
-        int[] img = {
-                R.drawable.mobil0, R.drawable.mobil1, R.drawable.mobil2, R.drawable.mobil3,
-                R.drawable.mobil4, R.drawable.mobil5, R.drawable.mobil6, R.drawable.mobil7
-        };
-        String[] title = {
-                "New Vios", "All New Corolla Altis", "All New Camry", "All New Corolla Altis Hybrid",
-                "All New Camry Hybrid", "New Toyota 86", "Toyota GR Supra", "All New Avanza"
-        };
+        int[] img = dataListMobil.gridimg;
+        String[] title = dataListMobil.gridtitle;
         for(int i = 0; i < img.length; i++){
             mobil = new Mobil();
             mobil.setImg(img[i]);
@@ -74,10 +68,10 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
     public void onGridItemClick(View v, int position){
         Toast.makeText(context, mobilListAdapter.getItem(position).getTitle(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), DescriptionActivity.class);
-        intent.putExtra("img", home.gridimg[position]);
-        intent.putExtra("title", home.gridtitle[position]);
-        intent.putExtra("deskripsi1", home.griddeskripsi1[position]);
-        intent.putExtra("deskripsi2", home.griddeskripsi2[position]);
+        intent.putExtra("img", dataListMobil.gridimg[position]);
+        intent.putExtra("title", dataListMobil.gridtitle[position]);
+        intent.putExtra("harga", dataListMobil.harga[position]);
+        intent.putExtra("deskripsi1", dataListMobil.griddeskripsi1[position]);
         startActivity(intent);
     }
 }
