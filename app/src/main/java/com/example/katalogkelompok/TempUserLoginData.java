@@ -1,7 +1,7 @@
 package com.example.katalogkelompok;
 
-public interface TempUserLoginData {
+public class TempUserLoginData {
     //Rencana mo dipake buat nyimpen data user yang udh login buat nampilin nama dia doang di home.
-    String USER_NAME = "";
-    String USER_USERNAME = "";
+    public static String USER_NAME = "";
+    public static String USER_USERNAME = "";
 }

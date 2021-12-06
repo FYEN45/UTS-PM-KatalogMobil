@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,19 +34,22 @@ public class UserListActivity extends AppCompatActivity {
         getData();
 
         listview.setOnItemClickListener((parent, view, position, id) -> {
-            Intent intent = new Intent(UserListActivity.this, UserUpdateActivity.class);
-            intent.putExtra("id", arraylist_data.get(position).getId());
-            intent.putExtra("name", arraylist_data.get(position).getName());
-            intent.putExtra("email", arraylist_data.get(position).getEmail());
-            intent.putExtra("phoneNumber", arraylist_data.get(position).getPhoneNumber());
-            intent.putExtra("username", arraylist_data.get(position).getUsername());
-            intent.putExtra("password", arraylist_data.get(position).getPassword());
-            startActivity(intent);
-            finish();
+            if(TempUserLoginData.USER_USERNAME.equals("admin")){
+                Intent intent = new Intent(UserListActivity.this, UserUpdateActivity.class);
+                intent.putExtra("id", arraylist_data.get(position).getId());
+                intent.putExtra("name", arraylist_data.get(position).getName());
+                intent.putExtra("email", arraylist_data.get(position).getEmail());
+                intent.putExtra("phoneNumber", arraylist_data.get(position).getPhoneNumber());
+                intent.putExtra("username", arraylist_data.get(position).getUsername());
+                intent.putExtra("password", arraylist_data.get(position).getPassword());
+                startActivity(intent);
+                finish();
+            } else {
+                String pesan = "Anda bukan admin!";
+                Toast.makeText(UserListActivity.this, pesan, Toast.LENGTH_SHORT).show();
+            }
         });
-
     }
-
 
     private void getData() {
         StringRequest strReq = new StringRequest(Request.Method.GET, Config.requestUserList, responses -> {

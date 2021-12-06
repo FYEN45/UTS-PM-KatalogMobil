@@ -41,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
             if (validateUsername() && validatePassword()) {
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userLoginVerification, responses -> {
                     if (responses.equals("Login Berhasil!")) {
+                        TempUserLoginData.USER_USERNAME = String.valueOf(editTextLoginUsername.getText());
+
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                         Toast.makeText(LoginActivity.this, responses, Toast.LENGTH_SHORT).show();
                         startActivity(intent);
