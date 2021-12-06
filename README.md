@@ -5,12 +5,18 @@
 - Reynaldo Krisno 32190097
 - Ferry Gunawan 32190098
 
+# Requirement
+- XAMPP
+- Android Studio
+- Android Phone with API - 27 (Jangan make 27+)
+
 # IMPORTANT #
 JANGAN LUPA NYALAIN XAMPP!
-JANGAN LUPA PINDAHIN FOLDER PHP KE XAMPP!
-JANGAN LUPA IMPORT DATABASE KE MYSQL!
+JANGAN LUPA GANTI IP DI Config!
+JANGAN LUPA PINDAHIN FOLDER "carcatalog" KE ./XAMPP/htdocs !
+JANGAN LUPA IMPORT DATABASE "car_catalog" KE MYSQL!
 
-di dalam folder PHP_XAMPP_MYSQL (KatalogKelompok/PHP_XAMPP_MYSQL) ada folder "CarCatalog".
-"CarCatalog" dimasukkin ke folder "htdocs" nya XAMPP.
+di dalam folder PHP_XAMPP_MYSQL (KatalogKelompok/PHP_XAMPP_MYSQL) ada folder "carcatalog".
+"carcatalog" dimasukkin ke folder "htdocs" nya XAMPP.
 
-Database ada di dalam folder PHP_XAMPP_MYSQL (KatalogKelompok/PHP_XAMPP_MYSQL).
+Database ada di dalam folder PHP_XAMPP_MYSQL (KatalogKelompok/PHP_XAMPP_MYSQL/Database).

@@ -19,7 +19,7 @@ public class DescriptionActivity extends AppCompatActivity {
         TextView titleMobil = findViewById(R.id.nama);
         TextView deskripsiMobil = findViewById(R.id.deskripsi);
 
-        Intent i =getIntent();
+        Intent i = getIntent();
         gambarMobil.setImageResource(i.getIntExtra("img",0));
         titleMobil.setText(i.getStringExtra("title"));
         deskripsiMobil.setText(i.getStringExtra("deskripsi"));

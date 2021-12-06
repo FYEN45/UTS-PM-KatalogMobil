@@ -3,6 +3,7 @@ package com.example.katalogkelompok;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -37,6 +38,17 @@ public class UserListActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
         getData();
 
+        listview.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(UserListActivity.this, UserUpdateActivity.class);
+            intent.putExtra("id", arraylist_data.get(position).getId());
+            intent.putExtra("name", arraylist_data.get(position).getName());
+            intent.putExtra("email", arraylist_data.get(position).getEmail());
+            intent.putExtra("phoneNumber", arraylist_data.get(position).getPhoneNumber());
+            intent.putExtra("username", arraylist_data.get(position).getUsername());
+            intent.putExtra("password", arraylist_data.get(position).getPassword());
+            startActivity(intent);
+        });
+
     }
 
     private void showProgressDialog() {
@@ -55,10 +67,8 @@ public class UserListActivity extends AppCompatActivity {
         showProgressDialog();
         StringRequest strReq = new StringRequest(Request.Method.GET, Config.requestUserList,responses -> {
             hideProgressDialog();
-            System.out.println();
             try {
                 JSONObject response = new JSONObject(responses);
-                Toast.makeText(UserListActivity.this, response.getString("error_text"), Toast.LENGTH_SHORT).show();
                 JSONObject header = response.getJSONObject("data");
                 Iterator<String> iterator = header.keys();
                 while (iterator.hasNext()) {
@@ -69,6 +79,7 @@ public class UserListActivity extends AppCompatActivity {
                     users.setId(item.getString("id"));
                     users.setName(item.getString("name"));
                     users.setEmail(item.getString("email"));
+                    users.setPhoneNumber(item.getString("phoneNumber"));
                     users.setUsername(item.getString("username"));
                     users.setPassword(item.getString("password"));
                     arraylist_data.add(users);

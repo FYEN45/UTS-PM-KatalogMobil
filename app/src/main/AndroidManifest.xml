@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KatalogKelompok">
         <activity
+            android:name=".UserUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserListActivity"
             android:exported="false" />
         <activity
