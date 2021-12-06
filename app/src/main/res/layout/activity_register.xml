@@ -44,11 +44,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterName"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:boxCornerRadiusBottomEnd="50dp"
-                app:boxCornerRadiusBottomStart="50dp"
-                app:boxCornerRadiusTopEnd="50dp"
-                app:boxCornerRadiusTopStart="50dp">
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterName"
@@ -63,11 +59,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterEmail"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:boxCornerRadiusBottomEnd="50dp"
-                app:boxCornerRadiusBottomStart="50dp"
-                app:boxCornerRadiusTopEnd="50dp"
-                app:boxCornerRadiusTopStart="50dp">
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterEmail"
@@ -82,11 +74,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterPhone"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:boxCornerRadiusBottomEnd="50dp"
-                app:boxCornerRadiusBottomStart="50dp"
-                app:boxCornerRadiusTopEnd="50dp"
-                app:boxCornerRadiusTopStart="50dp">
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterPhone"
@@ -95,17 +83,14 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:hint="Phone Number"
+                    android:inputType="phone"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterUsername"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:boxCornerRadiusBottomEnd="50dp"
-                app:boxCornerRadiusBottomStart="50dp"
-                app:boxCornerRadiusTopEnd="50dp"
-                app:boxCornerRadiusTopStart="50dp">
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterUsername"
@@ -121,10 +106,6 @@
                 android:id="@+id/textInputLayoutRegisterPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:boxCornerRadiusBottomEnd="50dp"
-                app:boxCornerRadiusBottomStart="50dp"
-                app:boxCornerRadiusTopEnd="50dp"
-                app:boxCornerRadiusTopStart="50dp"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
