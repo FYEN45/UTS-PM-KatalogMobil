@@ -137,16 +137,18 @@ public class HomeActivity extends AppCompatActivity {
             finish();
         });
 
+        buttonUserList.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, UserListActivity.class);
+            startActivity(intent);
+        });
+
         FloatingActionButton floatingActionButtonWebsite = findViewById(R.id.floatingActionButtonWebsite);
+        floatingActionButtonWebsite.bringToFront();
+        floatingActionButtonWebsite.invalidate();
         floatingActionButtonWebsite.setOnClickListener(view -> {
             String url = "https://www.toyota.astra.co.id/home";
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
-            startActivity(intent);
-        });
-
-        buttonUserList.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, UserListActivity.class);
             startActivity(intent);
         });
 
