@@ -65,7 +65,6 @@
                 android:id="@android:id/content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
             </FrameLayout>
         </LinearLayout>
     </ScrollView>
@@ -77,6 +76,7 @@
         android:layout_gravity="end|bottom"
         android:layout_marginStart="339dp"
         android:clickable="true"
+        android:translationZ="270dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

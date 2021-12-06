@@ -76,7 +76,8 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
         Intent intent = new Intent(getActivity(), DescriptionActivity.class);
         intent.putExtra("img", home.gridimg[position]);
         intent.putExtra("title", home.gridtitle[position]);
-        intent.putExtra("deskripsi", home.griddeskripsi[position]);
+        intent.putExtra("deskripsi1", home.griddeskripsi1[position]);
+        intent.putExtra("deskripsi2", home.griddeskripsi2[position]);
         startActivity(intent);
     }
 }
