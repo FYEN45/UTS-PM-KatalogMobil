@@ -14,7 +14,6 @@ public class DescriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deskripsi);
 
-
         ImageView gambarMobil = findViewById(R.id.gambar);
         TextView titleMobil = findViewById(R.id.nama);
         TextView deskripsiMobil = findViewById(R.id.deskripsi);
@@ -23,6 +22,5 @@ public class DescriptionActivity extends AppCompatActivity {
         gambarMobil.setImageResource(i.getIntExtra("img",0));
         titleMobil.setText(i.getStringExtra("title"));
         deskripsiMobil.setText(i.getStringExtra("deskripsi"));
-
     }
 }

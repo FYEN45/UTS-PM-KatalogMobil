@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 public class HomeActivity extends AppCompatActivity {
-
     int[] gridimg = {
             R.drawable.mobil0, R.drawable.mobil1, R.drawable.mobil2, R.drawable.mobil3,
             R.drawable.mobil4, R.drawable.mobil5, R.drawable.mobil6, R.drawable.mobil7
@@ -119,21 +118,17 @@ public class HomeActivity extends AppCompatActivity {
         Button buttonLogout = findViewById(R.id.buttonLogout);
         Button buttonWebsite = findViewById(R.id.buttonWebsite);
 
-
-
         buttonLogout.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         });
-
         buttonWebsite.setOnClickListener(view -> {
             String url = "https://www.toyota.astra.co.id/home";
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
             startActivity(intent);
         });
-
         Fragment fragment = getSupportFragmentManager().findFragmentById(android.R.id.content);
         if(fragment == null){
             fragment = FragmentMobil.newInstance();
@@ -147,6 +142,5 @@ public class HomeActivity extends AppCompatActivity {
                     .attach(fragment)
                     .commit();
         }
-
     }
 }

@@ -29,9 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText editTextLoginPassword;
     Button buttonLogin;
     TextView textViewRegister;
-
     Boolean tempBool;
-
     private ProgressDialog pDialog;
 
     @Override
@@ -73,14 +71,12 @@ public class LoginActivity extends AppCompatActivity {
             };
             AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
         });
-
         //Textview Intent ke Register
         textViewRegister.setOnClickListener(view -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         });
     }
-
     private void initViews() {
         textInputLayoutLoginUsername = findViewById(R.id.textInputLayoutLoginUsername);
         textInputLayoutLoginPassword = findViewById(R.id.textInputLayoutLoginPassword);
@@ -89,19 +85,16 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewRegister = findViewById(R.id.textViewCreateAccount);
     }
-
     private void showProgressDialog() {
         if (!pDialog.isShowing()) {
             pDialog.show();
         }
     }
-
     private void hideProgressDialog() {
         if (pDialog.isShowing()) {
             pDialog.hide();
         }
     }
-
     private boolean validateUsername() {
         boolean validuser;
         String Username = editTextLoginUsername.getText().toString();
@@ -119,7 +112,6 @@ public class LoginActivity extends AppCompatActivity {
         }
         return validuser;
     }
-
     private boolean validatePassword() {
         boolean validpass;
         String Username = editTextLoginPassword.getText().toString();

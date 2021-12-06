@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
             runLogin();
         });
     }
-
     public void runLogin() {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);

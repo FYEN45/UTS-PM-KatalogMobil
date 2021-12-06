@@ -1,7 +1,6 @@
 package com.example.katalogkelompok;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -84,20 +83,16 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
-
     private void showProgressDialog() {
         if (!pDialog.isShowing()) {
             pDialog.show();
         }
     }
-
     private void hideProgressDialog() {
         if (pDialog.isShowing()) {
             pDialog.hide();
         }
     }
-
     private void initViews() {
         textInputLayoutRegisterName = findViewById(R.id.textInputLayoutRegisterName);
         textInputLayoutRegisterEmail = findViewById(R.id.textInputLayoutRegisterEmail);
@@ -116,7 +111,6 @@ public class RegisterActivity extends AppCompatActivity {
         TextView textViewLogin = findViewById(R.id.textViewLogin);
         textViewLogin.setOnClickListener(view -> finish());
     }
-
     private boolean validateName() {
         boolean validname;
         String Name = editTextRegisterName.getText().toString();
@@ -135,7 +129,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
         return validname;
     }
-
     private boolean validateEmail() {
         boolean validemail;
 
@@ -150,7 +143,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
         return validemail;
     }
-
     private boolean validatePhoneNumber() {
         boolean validphone;
         String PhoneNumber = editTextRegisterPhoneNumber.getText().toString();
@@ -169,7 +161,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
         return validphone;
     }
-
     private boolean validateUsername() {
         boolean validuser;
         String UserName = editTextRegisterUsername.getText().toString();
@@ -188,7 +179,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
         return validuser;
     }
-
     private boolean validatePassword() {
         boolean validpass;
         String Password = editTextRegisterPassword.getText().toString();

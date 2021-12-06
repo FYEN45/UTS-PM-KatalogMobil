@@ -19,22 +19,18 @@ public class MobilListAdapter extends RecyclerView.Adapter<MobilListAdapter.Mobi
         this.onGridItemSelectedListener = onGridItemSelectedListener;
         mobilList = new ArrayList<>();
     }
-
     private void add(Mobil item){
         mobilList.add(item);
         notifyItemInserted(mobilList.size() - 1);
     }
-
     public void addAll(List<Mobil> mobilList){
         for(Mobil mobil : mobilList){
             add(mobil);
         }
     }
-
     public Mobil getItem(int position){
         return mobilList.get(position);
     }
-
     @NonNull
     @Override
     public MobilListAdapter.MobilViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -50,14 +46,12 @@ public class MobilListAdapter extends RecyclerView.Adapter<MobilListAdapter.Mobi
         });
         return mobilViewHolder;
     }
-
     @Override
     public void onBindViewHolder(MobilListAdapter.MobilViewHolder holder,  int position){
         final Mobil single = mobilList.get(position);
         holder.img.setImageResource(single.getImg());
         holder.title.setText(single.getTitle());
     }
-
     @Override
     public int getItemCount(){
         return mobilList.size();
@@ -73,7 +67,6 @@ public class MobilListAdapter extends RecyclerView.Adapter<MobilListAdapter.Mobi
             title = itemView.findViewById(R.id.title);
         }
     }
-
     public interface OnGridItemSelectedListener{
         void onGridItemClick(View view,  int position);
     }
