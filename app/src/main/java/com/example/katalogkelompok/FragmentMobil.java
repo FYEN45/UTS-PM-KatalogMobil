@@ -17,23 +17,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridItemSelectedListener{
+public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridItemSelectedListener {
     private RecyclerView lvSingle;
     private MobilListAdapter mobilListAdapter;
     private Context context;
     DataListMobil dataListMobil = new DataListMobil();
 
-    public static Fragment newInstance() { return new FragmentMobil();}
+    public static Fragment newInstance() {
+        return new FragmentMobil();
+    }
 
     @Override
-    public void onAttach(@NonNull Context context){
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         this.context = context;
     }
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragmen_mobil, container, false);
         lvSingle = rootView.findViewById(R.id.lvSingle);
         return rootView;
@@ -41,7 +43,7 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
 
     @Override
     @SuppressWarnings("deprecation")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState){
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mobilListAdapter = new MobilListAdapter(this);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 2);
@@ -51,12 +53,12 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
         loadData();
     }
 
-    public void loadData(){
+    public void loadData() {
         List<Mobil> mobilList = new ArrayList<>();
         Mobil mobil;
         int[] img = dataListMobil.gridimg;
         String[] title = dataListMobil.gridtitle;
-        for(int i = 0; i < img.length; i++){
+        for (int i = 0; i < img.length; i++) {
             mobil = new Mobil();
             mobil.setImg(img[i]);
             mobil.setTitle(title[i]);
@@ -64,8 +66,9 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
         }
         mobilListAdapter.addAll(mobilList);
     }
+
     @Override
-    public void onGridItemClick(View v, int position){
+    public void onGridItemClick(View v, int position) {
         Toast.makeText(context, mobilListAdapter.getItem(position).getTitle(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), DescriptionActivity.class);
         intent.putExtra("img", dataListMobil.gridimg[position]);

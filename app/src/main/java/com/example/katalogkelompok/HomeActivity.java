@@ -41,13 +41,13 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         Fragment fragment = getSupportFragmentManager().findFragmentById(android.R.id.content);
-        if(fragment == null){
+        if (fragment == null) {
             fragment = FragmentMobil.newInstance();
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(android.R.id.content, fragment, "")
                     .commit();
-        }else{
+        } else {
             getSupportFragmentManager()
                     .beginTransaction()
                     .attach(fragment)

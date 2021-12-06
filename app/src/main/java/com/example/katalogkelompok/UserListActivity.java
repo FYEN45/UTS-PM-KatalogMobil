@@ -1,13 +1,11 @@
 package com.example.katalogkelompok;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyLog;
@@ -26,16 +24,12 @@ public class UserListActivity extends AppCompatActivity {
     private final String TAG = UserListActivity.class.getSimpleName();
     ListView listview;
     ArrayList<Users> arraylist_data = new ArrayList<>();
-    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
         listview = findViewById(R.id.listViewUser);
-        pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Loading...");
-        pDialog.setCancelable(false);
         getData();
 
         listview.setOnItemClickListener((parent, view, position, id) -> {
@@ -52,22 +46,9 @@ public class UserListActivity extends AppCompatActivity {
 
     }
 
-    private void showProgressDialog() {
-        if (!pDialog.isShowing()) {
-            pDialog.show();
-        }
-    }
-
-    private void hideProgressDialog() {
-        if (pDialog.isShowing()) {
-            pDialog.hide();
-        }
-    }
 
     private void getData() {
-        showProgressDialog();
-        StringRequest strReq = new StringRequest(Request.Method.GET, Config.requestUserList,responses -> {
-            hideProgressDialog();
+        StringRequest strReq = new StringRequest(Request.Method.GET, Config.requestUserList, responses -> {
             try {
                 JSONObject response = new JSONObject(responses);
                 JSONObject header = response.getJSONObject("data");
@@ -95,7 +76,6 @@ public class UserListActivity extends AppCompatActivity {
         }, error -> {
             System.out.println();
             VolleyLog.d(TAG, "Error: " + error.getMessage());
-            hideProgressDialog();
         });
         //Adding request to request queue
         AppController.getInstance(getApplicationContext()).addToRequestQueue(strReq);

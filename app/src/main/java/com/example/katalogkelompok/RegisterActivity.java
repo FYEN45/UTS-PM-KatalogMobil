@@ -1,8 +1,5 @@
 package com.example.katalogkelompok;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -10,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyLog;
@@ -36,23 +35,16 @@ public class RegisterActivity extends AppCompatActivity {
     EditText editTextRegisterPassword;
     Button buttonRegister;
 
-    ProgressDialog pDialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         initViews();
-        pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Loading...");
-        pDialog.setCancelable(false);
 
         buttonRegister.setOnClickListener(view -> {
             if (validateName() && validateEmail() && validatePhoneNumber() && validateUsername() && validatePassword()) {
-                showProgressDialog();
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userRegister, responses -> {
-                    hideProgressDialog();
                     if (responses.equals("Registrasi Berhasil!")) {
                         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                         Toast.makeText(RegisterActivity.this, responses, Toast.LENGTH_SHORT).show();
@@ -63,7 +55,6 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 }, error -> {
                     VolleyLog.d(TAG, "Error: " + error.getMessage());
-                    hideProgressDialog();
                 }) {
                     //Data yang dikirim
                     @Override
@@ -78,24 +69,10 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 };
                 AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
-            }
-            else {
+            } else {
                 Snackbar.make(buttonRegister, "Gagal Register", Snackbar.LENGTH_LONG).show();
             }
         });
-    }
-
-
-    private void showProgressDialog() {
-        if (!pDialog.isShowing()) {
-            pDialog.show();
-        }
-    }
-
-    private void hideProgressDialog() {
-        if (pDialog.isShowing()) {
-            pDialog.hide();
-        }
     }
 
     private void initViews() {

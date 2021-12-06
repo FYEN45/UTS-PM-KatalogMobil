@@ -1,13 +1,12 @@
 package com.example.katalogkelompok;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyLog;
@@ -34,14 +33,7 @@ public class UserUpdateActivity extends AppCompatActivity {
     Button buttonSave;
     Button buttonDelete;
 
-    ProgressDialog pDialog;
-
     String id;
-    String name;
-    String email;
-    String phoneNumber;
-    String username;
-    String password;
     String action;
 
     @Override
@@ -51,9 +43,6 @@ public class UserUpdateActivity extends AppCompatActivity {
 
         initViews();
         recieveData();
-        pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Loading...");
-        pDialog.setCancelable(false);
 
         buttonSave.setOnClickListener(view -> {
             action = "edit";
@@ -66,19 +55,7 @@ public class UserUpdateActivity extends AppCompatActivity {
         });
     }
 
-    private void showProgressDialog() {
-        if (!pDialog.isShowing()) {
-            pDialog.show();
-        }
-    }
-
-    private void hideProgressDialog() {
-        if (pDialog.isShowing()) {
-            pDialog.hide();
-        }
-    }
-
-    void recieveData(){
+    void recieveData() {
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
 
@@ -89,20 +66,17 @@ public class UserUpdateActivity extends AppCompatActivity {
         editTextUpdatePassword.setText(intent.getStringExtra("password"));
     }
 
-    void requestUpdateData(){
-        showProgressDialog();
+    void requestUpdateData() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.requestUpdateData, responses -> {
-            hideProgressDialog();
             Toast.makeText(UserUpdateActivity.this, responses, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UserUpdateActivity.this, UserListActivity.class);
             startActivity(intent);
-            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
-            intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             finish();
         }, error -> {
             VolleyLog.d(TAG, "Error: " + error.getMessage());
-            hideProgressDialog();
         }) {
             //Data yang dikirim
             @Override
@@ -121,7 +95,7 @@ public class UserUpdateActivity extends AppCompatActivity {
         AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
 
-    void initViews(){
+    void initViews() {
         textInputLayoutUpdateName = findViewById(R.id.textInputLayoutUpdateName);
         textInputLayoutUpdateEmail = findViewById(R.id.textInputLayoutUpdateEmail);
         textInputLayoutUpdatePhoneNumber = findViewById(R.id.textInputLayoutUpdatePhoneNumber);

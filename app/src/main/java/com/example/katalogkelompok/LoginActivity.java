@@ -1,7 +1,6 @@
 package com.example.katalogkelompok;
 
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -30,48 +29,39 @@ public class LoginActivity extends AppCompatActivity {
     Button buttonLogin;
     TextView textViewRegister;
 
-    Boolean tempBool;
-
-    private ProgressDialog pDialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         initViews();
-        pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Loading...");
-        pDialog.setCancelable(false);
 
         //Button Login
         buttonLogin.setOnClickListener(view -> {
-            showProgressDialog();
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userLoginVerification, responses ->{
-                hideProgressDialog();
-                if (responses.equals("Login Berhasil!")) {
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    Toast.makeText(LoginActivity.this, responses, Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                    finish();
-                } else {
-                    Toast.makeText(LoginActivity.this, responses, Toast.LENGTH_SHORT).show();
-                }
-            }, error -> {
-                VolleyLog.d(TAG, "Error: "+error.getMessage());
-                hideProgressDialog();
-            })
-            {
-                //Data yang dikirim
-                @Override
-                protected Map<String, String> getParams(){
-                    Map<String, String> params = new HashMap<>();
-                    params.put("username", String.valueOf(editTextLoginUsername.getText()));
-                    params.put("password", String.valueOf(editTextLoginPassword.getText()));
-                    return params;
-                }
-            };
-            AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
+            if (validateUsername() && validatePassword()) {
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.userLoginVerification, responses -> {
+                    if (responses.equals("Login Berhasil!")) {
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        Toast.makeText(LoginActivity.this, responses, Toast.LENGTH_SHORT).show();
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, responses, Toast.LENGTH_SHORT).show();
+                    }
+                }, error -> {
+                    VolleyLog.d(TAG, "Error: " + error.getMessage());
+                }) {
+                    //Data yang dikirim
+                    @Override
+                    protected Map<String, String> getParams() {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("username", String.valueOf(editTextLoginUsername.getText()));
+                        params.put("password", String.valueOf(editTextLoginPassword.getText()));
+                        return params;
+                    }
+                };
+                AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
+            }
         });
 
         //Textview Intent ke Register
@@ -88,18 +78,6 @@ public class LoginActivity extends AppCompatActivity {
         editTextLoginPassword = findViewById(R.id.editTextLoginPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewRegister = findViewById(R.id.textViewCreateAccount);
-    }
-
-    private void showProgressDialog() {
-        if (!pDialog.isShowing()) {
-            pDialog.show();
-        }
-    }
-
-    private void hideProgressDialog() {
-        if (pDialog.isShowing()) {
-            pDialog.hide();
-        }
     }
 
     private boolean validateUsername() {

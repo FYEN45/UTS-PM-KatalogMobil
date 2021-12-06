@@ -12,28 +12,34 @@ import java.util.ArrayList;
 
 public class UserAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
-    private Activity activity;
+    private final Activity activity;
     private ArrayList<Users> arraylist_data = new ArrayList<>();
-    public UserAdapter(Activity a, ArrayList<Users> d){
-        activity = a; arraylist_data = d;
+
+    public UserAdapter(Activity a, ArrayList<Users> d) {
+        activity = a;
+        arraylist_data = d;
         inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
+
     @Override
-    public int getCount(){
+    public int getCount() {
         return arraylist_data.size();
     }
+
     @Override
-    public Object getItem(int position){
+    public Object getItem(int position) {
         return arraylist_data.get(position);
     }
+
     @Override
-    public long getItemId(int position){
+    public long getItemId(int position) {
         return position;
     }
+
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
-        if(convertView == null){
+        if (convertView == null) {
             vi = inflater.inflate(R.layout.user_item, null);
         }
         TextView textViewname = (TextView) vi.findViewById(R.id.ul_name);
