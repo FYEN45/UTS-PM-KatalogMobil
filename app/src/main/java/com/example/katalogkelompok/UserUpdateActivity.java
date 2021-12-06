@@ -96,7 +96,9 @@ public class UserUpdateActivity extends AppCompatActivity {
             Toast.makeText(UserUpdateActivity.this, responses, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UserUpdateActivity.this, UserListActivity.class);
             startActivity(intent);
-            intent.addFlags();
+            intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
             finish();
         }, error -> {
             VolleyLog.d(TAG, "Error: " + error.getMessage());

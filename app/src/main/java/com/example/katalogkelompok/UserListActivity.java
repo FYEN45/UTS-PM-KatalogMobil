@@ -47,6 +47,7 @@ public class UserListActivity extends AppCompatActivity {
             intent.putExtra("username", arraylist_data.get(position).getUsername());
             intent.putExtra("password", arraylist_data.get(position).getPassword());
             startActivity(intent);
+            finish();
         });
 
     }
