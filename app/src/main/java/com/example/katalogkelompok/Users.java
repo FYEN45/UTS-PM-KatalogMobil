@@ -1,25 +1,26 @@
 package com.example.katalogkelompok;
 
 public class Users {
+    private String id;
     private String name;
     private String email;
     private String phoneNumber;
     private String username;
     private String password;
 
-    public Users(String name, String email, String phoneNumber, String username, String password) {
-        this.name = name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.username = username;
-        this.password = password;
+    public String getId() {
+        return id;
     }
 
-    public String getNama() {
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public void setNama(String nama) {
+    public void setName(String name) {
         this.name = name;
     }
 
