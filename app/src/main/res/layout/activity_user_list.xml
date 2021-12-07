@@ -13,10 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:background="@color/toolbar_background_color"
-        app:logo="@drawable/ic_baseline_car_54"
-        app:subtitle="Katalog Mobil"
+        app:logo="@drawable/ic_baseline_person_24"
         app:subtitleTextColor="@color/toolbar_subtitle_text_color"
-        app:title="Home"
+        app:title="User List"
         app:titleTextColor="@color/toolbar_title_text_color" />
 
     <ListView

@@ -2,20 +2,16 @@ package com.example.katalogkelompok;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,16 +37,6 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragmen_mobil, container, false);
         lvSingle = rootView.findViewById(R.id.lvSingle);
-
-        FloatingActionButton floatingActionButtonWebsite = rootView.findViewById(R.id.floatingActionButtonWebsite);
-        floatingActionButtonWebsite.bringToFront();
-        floatingActionButtonWebsite.show();
-        floatingActionButtonWebsite.setOnClickListener(view -> {
-            String url = "https://www.toyota.astra.co.id/home";
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
-            startActivity(intent);
-        });
         return rootView;
     }
 
@@ -82,7 +68,6 @@ public class FragmentMobil extends Fragment implements MobilListAdapter.OnGridIt
 
     @Override
     public void onGridItemClick(View v, int position) {
-        Toast.makeText(context, mobilListAdapter.getItem(position).getTitle(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), DescriptionActivity.class);
         intent.putExtra("img", dataListMobil.gridimg[position]);
         intent.putExtra("title", dataListMobil.gridtitle[position]);

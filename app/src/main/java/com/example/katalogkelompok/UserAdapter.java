@@ -42,7 +42,7 @@ public class UserAdapter extends BaseAdapter {
         if (convertView == null) {
             vi = inflater.inflate(R.layout.user_item, null);
         }
-        TextView textViewname = (TextView) vi.findViewById(R.id.ul_name);
+        TextView textViewname = vi.findViewById(R.id.ul_name);
 
         Users users = arraylist_data.get(position);
         textViewname.setText(users.getName());

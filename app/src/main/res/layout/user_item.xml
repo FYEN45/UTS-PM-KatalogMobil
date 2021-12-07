@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        />
+        android:textColor="@color/title_text"
+        android:textSize="16sp" />
 
 </LinearLayout>

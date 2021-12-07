@@ -45,46 +45,50 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
                 android:adjustViewBounds="true"
+                android:background="@drawable/bg_mobil"
                 tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/nama"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="sans-serif-black"
                 android:text="Nama"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/product_title"
                 android:textSize="34sp"
-                android:textStyle="bold|italic"
                 tools:text="Nama" />
 
             <TextView
                 android:id="@+id/harga"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="sans-serif-medium"
                 android:text="Harga"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/product_price"
                 android:textSize="24sp"
-                android:textStyle="bold|italic"
                 tools:text="Harga" />
 
             <TextView
                 android:id="@+id/deskripsi1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:background="#FFFFFF"
-                android:justificationMode="inter_word"
+                android:background="#FFECDA"
+                android:fontFamily="sans-serif-light"
                 android:padding="15dp"
                 android:text="Deskripsi"
                 android:textAllCaps="false"
-                android:textColor="#000000"
+                android:textColor="@color/product_description"
                 android:textSize="20sp"
                 android:textStyle="normal" />
 

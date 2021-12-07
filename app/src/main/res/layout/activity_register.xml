@@ -16,10 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/ic_baseline_car_54"
-        app:subtitle="Katalog Mobil"
-        app:subtitleTextColor="@color/toolbar_subtitle_text_color"
-        app:title="User Register"
-        app:titleTextColor="@color/toolbar_title_text_color"/>
+        app:title="Register"
+        app:titleTextColor="@color/toolbar_title_text_color" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +25,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar"
+        app:layout_constraintVertical_bias="0.2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,10 +35,10 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_baseline_person_24" />
+                app:srcCompat="@drawable/toyota" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutRegisterName"
@@ -133,8 +132,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="TextView"
-                android:textAlignment="center" />
+                android:text="Click me to Login!"
+                android:textAlignment="center"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

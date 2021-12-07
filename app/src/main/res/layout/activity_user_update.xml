@@ -11,19 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:background="@color/toolbar_background_color"
-        app:logo="@drawable/ic_baseline_car_54"
-        app:subtitle="Katalog Mobil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/ic_baseline_person_24"
+        app:subtitle=""
         app:subtitleTextColor="@color/toolbar_subtitle_text_color"
-        app:title="Home"
+        app:title="Update User"
         app:titleTextColor="@color/toolbar_title_text_color" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutUpdateName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Toolbar"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="1dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -37,6 +41,8 @@
         android:id="@+id/textInputLayoutUpdateEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayoutUpdateName"
         app:layout_constraintStart_toStartOf="@+id/textInputLayoutUpdateName"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUpdateName">
@@ -52,6 +58,8 @@
         android:id="@+id/textInputLayoutUpdatePhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayoutUpdateEmail"
         app:layout_constraintStart_toStartOf="@+id/textInputLayoutUpdateEmail"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUpdateEmail">
@@ -67,6 +75,8 @@
         android:id="@+id/textInputLayoutUpdateUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayoutUpdatePhoneNumber"
         app:layout_constraintStart_toStartOf="@+id/textInputLayoutUpdatePhoneNumber"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUpdatePhoneNumber">
@@ -82,6 +92,8 @@
         android:id="@+id/textInputLayoutUpdatePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textInputLayoutUpdateUsername"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUpdateUsername">
@@ -97,6 +109,7 @@
         android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#74DC6C"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -104,7 +117,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonDelete"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUpdatePassword"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonDelete"

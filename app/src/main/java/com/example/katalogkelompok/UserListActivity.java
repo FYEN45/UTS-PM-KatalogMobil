@@ -2,7 +2,6 @@ package com.example.katalogkelompok;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,7 +33,7 @@ public class UserListActivity extends AppCompatActivity {
         getData();
 
         listview.setOnItemClickListener((parent, view, position, id) -> {
-            if(TempUserLoginData.USER_USERNAME.equals("admin")){
+            if (TempUserLoginData.USER_USERNAME.equals("admin")) {
                 Intent intent = new Intent(UserListActivity.this, UserUpdateActivity.class);
                 intent.putExtra("id", arraylist_data.get(position).getId());
                 intent.putExtra("name", arraylist_data.get(position).getName());
@@ -69,8 +68,6 @@ public class UserListActivity extends AppCompatActivity {
                     users.setUsername(item.getString("username"));
                     users.setPassword(item.getString("password"));
                     arraylist_data.add(users);
-                    Log.e(TAG, item.toString());
-                    Log.e(TAG, item.getString("name"));
                 }
                 listview.setAdapter(new UserAdapter(UserListActivity.this, arraylist_data));
                 System.out.println(arraylist_data);
