@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                 };
                 AppController.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
             } else {
-                Snackbar.make(buttonRegister, "Gagal Register", Snackbar.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "Gagal Register!", Toast.LENGTH_SHORT).show();
             }
         });
     }

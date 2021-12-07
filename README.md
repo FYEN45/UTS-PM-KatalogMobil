@@ -3,14 +3,16 @@
 - Felix Setiawan 32190032
 - Kelvin Chandra 32190041
 - Reynaldo Krisno 32190097
-- Ferry Gunawan 32190098
+- Ferry Gunawan 32190098 (Ketua)
 
 # Requirement
-- XAMPP
 - Android Studio
-- Android Phone with API - 27 (Jangan make 27+)
+- Android Phone with API 27 (Jangan make 27+)
+- Text Editor (Visual Studio Code, Notepad, dll)
+- XAMPP
+- Github Desktop
 
-# IMPORTANT #
+# IMPORTANT
 JANGAN LUPA NYALAIN XAMPP!
 JANGAN LUPA GANTI IP DI Config!
 JANGAN LUPA PINDAHIN FOLDER "carcatalog" KE ./XAMPP/htdocs !
