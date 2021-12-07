@@ -22,9 +22,9 @@
             WHERE `id`='".$parameter['id']."'";
         if(mysqli_query($db->connect_DB(), $query)){
             header("HTTP/1.1.200");
-            echo "Berhasil menambahkan ".$parameter['name'];
+            echo "Berhasil mengubah ".$parameter['name'];
         } else {
-            echo "Gagal menambahkan ".$parameter['name'];
+            echo "Gagal mengubah ".$parameter['name'];
         }
 
     } else if ($parameter['action']=="delete"){
