@@ -18,7 +18,8 @@
         if(mysqli_num_rows($query) > 0) {
             echo "Registrasi Gagal! Email sudah terdaftar.";
         } else {        
-            $insert = "INSERT INTO users (`name`, `email`, `phoneNumber`, `username`, `password`) VALUES ('$name', '$email', '$phoneNumber', '$username', '$password')";
+            $insert = "INSERT INTO users (`name`, `email`, `phoneNumber`, `username`, `password`) 
+                    VALUES ('$name', '$email', '$phoneNumber', '$username', '$password')";
             mysqli_query($db->connect_DB(), $insert);
             echo "Registrasi Berhasil!";
         }
