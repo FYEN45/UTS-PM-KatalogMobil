@@ -70,10 +70,10 @@ public class UserUpdateActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.requestUpdateData, responses -> {
             Toast.makeText(UserUpdateActivity.this, responses, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UserUpdateActivity.this, UserListActivity.class);
-            startActivity(intent);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
             finish();
         }, error -> {
             VolleyLog.d(TAG, "Error: " + error.getMessage());

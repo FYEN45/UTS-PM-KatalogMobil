@@ -45,9 +45,9 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                     case R.id.menu_contactus:
                         String url = "https://www.toyota.astra.co.id/shopping-tools/contact-us";
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setData(Uri.parse(url));
-                        startActivity(intent);
+                        Intent intent_url = new Intent(Intent.ACTION_VIEW);
+                        intent_url.setData(Uri.parse(url));
+                        startActivity(intent_url);
                         overridePendingTransition(0, 0);
                         return true;
                 }
