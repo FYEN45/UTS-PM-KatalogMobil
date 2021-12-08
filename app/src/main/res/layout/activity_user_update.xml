@@ -52,7 +52,6 @@
             android:id="@+id/editTextUpdateEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:editable="false"
             android:enabled="false"
             android:hint="Email" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -88,7 +87,6 @@
             android:id="@+id/editTextUpdateUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:editable="false"
             android:enabled="false"
             android:hint="Username" />
     </com.google.android.material.textfield.TextInputLayout>
