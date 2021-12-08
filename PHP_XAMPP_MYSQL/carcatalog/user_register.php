@@ -10,8 +10,6 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    //$query = mysqli_query($db->connect_DB(), "SELECT * FROM users WHERE username='$username' AND password='$password'");
-
     $query = mysqli_query($db->connect_DB(), "SELECT * FROM users WHERE username='$username'");
     if(mysqli_num_rows($query) > 0) {
         echo "Registrasi Gagal! Username sudah terdaftar.";
