@@ -16,7 +16,6 @@
     if($parameter['action']=="edit"){
         $query = "UPDATE `users` SET 
             `name`='".$parameter['name']."',
-            `email`='".$parameter['email']."',
             `phoneNumber`='".$parameter['phoneNumber']."',
             `password`='".$parameter['password']."' 
             WHERE `id`='".$parameter['id']."'";
